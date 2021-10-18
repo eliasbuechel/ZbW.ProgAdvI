@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Aufgabe_A15_1_1.Controller.PeopleManager">
+    <Position X="6.75" Y="4.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAgAAAAAAAAAAAAAACAAAAAAAQAAEAAAAAAAAAEAA=</HashCode>
+      <FileName>Controller\PeopleManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="people" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Aufgabe_A15_1_1.Model.Person" BaseTypeListCollapsed="true">
+    <Position X="1.25" Y="4.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAAMAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Person.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Aufgabe_A15_1_1.Form1">
+    <Position X="5.25" Y="1.25" Width="4" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAASBIABAACACAAAACCAAAAIAAACEAAAkEAAA=</HashCode>
+      <FileName>View\Form1.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="pm" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="Aufgabe_A15_1_1.Model.IPerson">
+    <Position X="1.25" Y="2.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAABAAAAIAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IPerson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

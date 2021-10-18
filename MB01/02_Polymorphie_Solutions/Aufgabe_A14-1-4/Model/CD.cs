@@ -1,0 +1,53 @@
+﻿using Analyseaufgabe_A14_1_4.Model;
+using System;
+
+namespace Analyseaufgabe_A14_1_4.Model
+{
+    public class CD : Medium
+    {
+        private string kuenstler;
+        private int titelAnzahl;
+
+        public string Kuenstler
+        {
+            get { return kuenstler; }
+            set
+            {
+                if (value != null && value.Length > 0)
+                    kuenstler = value;
+                else
+                    throw new ArgumentException("argument may not be null or empty!");
+            }
+        }
+
+        public int TitelAnzahl
+        {
+            get { return titelAnzahl; }
+            set
+            {
+                if (value > 0)
+                    titelAnzahl = value;
+                else
+                    throw new ArgumentException("argument may not be empty!");
+            }
+        }
+
+        public CD(string titel, string kuenstler, int titelAnzahl, int spielzeit) : base(titel, spielzeit)
+        {
+            Kuenstler = kuenstler;
+            TitelAnzahl = titelAnzahl;
+        }
+
+        public override string Ausgeben()
+        {
+            const string delimiter = " | ";
+            string data = GetType().Name + ": " + Titel + " (" + Spielzeit + " Min)" + delimiter;
+            data += HabIch == true ? "*" + delimiter : "" + delimiter;
+            data += "Kommentar: " + Kommentar + delimiter;
+           
+            data += "Künster: " + Kuenstler + delimiter;
+            data += "Titelanzahl: " + TitelAnzahl + delimiter;
+            return data;
+        }
+    }
+}
