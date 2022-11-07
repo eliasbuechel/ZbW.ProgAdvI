@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Polymorphie {
     class Program {
@@ -8,8 +9,22 @@ namespace Polymorphie {
             flg.Starten();
             Hubschrauber hubi = new Hubschrauber();
             hubi.Starten();
+            Zeppelin zpl = new Zeppelin();
+            zpl.Starten();
 
+            Luftfahrzeug lfz = new Flugzeug();
+            Luftfahrzeug lfz2 = new Hubschrauber();
+            Luftfahrzeug lfz3 = new Zeppelin();
 
+            List<Luftfahrzeug> luftfahrzeuge = new List<Luftfahrzeug>();
+            luftfahrzeuge.Add(lfz);
+            luftfahrzeuge.Add(lfz2);
+            luftfahrzeuge.Add(lfz3);
+
+            foreach (Luftfahrzeug luftfahrzeug in luftfahrzeuge)
+            {
+                luftfahrzeug.Starten();
+            }
 
             // Test Polymorphie - Auswirkungen der drei Varianten
             //Luftfahrzeug[] arr = new Luftfahrzeug[4];
@@ -25,20 +40,32 @@ namespace Polymorphie {
         }
     }
 
-    public class Luftfahrzeug {
+    public abstract class Luftfahrzeug {
         public string Hersteller { get; set; }
         public int Baujahr { get; set; }
-
-        public void Starten() {
-            Console.WriteLine("Das Luftfahrzeug startet.");
+        public abstract void Starten();
+    }
+    public class Flugzeug : Luftfahrzeug
+    {
+        public double Spannweite { get; set; }
+        public override void Starten()
+        {
+            Console.WriteLine("Das Flugzeug startet.");
         }
     }
-
-    public class Flugzeug : Luftfahrzeug {
-        public double Spannweite { get; set; }
-    }
-
-    public class Hubschrauber : Luftfahrzeug {
+    public class Hubschrauber : Luftfahrzeug
+    {
         public double Rotor { get; set; }
+        public override void Starten()
+        {
+            Console.WriteLine("Der Hubschrauber startet.");
+        }
+    }
+    public class Zeppelin : Luftfahrzeug
+    {
+        public override void Starten()
+        {
+            Console.WriteLine("Der Zeppelin startet.");
+        }
     }
 }
